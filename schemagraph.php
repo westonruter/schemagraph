@@ -9,20 +9,22 @@
  * Home page: http://weston.ruter.net/projects/schemagraph/
  * Source: http://shepherd-interactive.googlecode.com/svn/trunk/schemagraph/
  *
- * To use this tool, simply place on web server and set the constants below to their
- * appropriate values. If you just change the DB_HOST, DB_USER, DB_PASS and leave the
- * DB_NAME as is, then you can pass the DB_NAME in as a "db" query parameter (e.g. /schemagraph.php?db=name )
- * The font size for the table names and the circle radius
+ * SchemaGraph, like Schemaball, queries the MySQL information_schema database to get all of the necessary
+ * information about a database's (InnoDB) tables to construct a graph; this graph is then output as an interactive
+ * SVG image with the following features:
+ * 
+ *  - Tables in the schema are placed equidistantly around a circle.
+ *  - Clicking the image causes the graph to rotate.
+ *  - Foreign key constraints are represented by bézier curves connecting table labels.
+ *  - Hovering over a table or a constraint causes the table's label to highlight along with all of its constraint paths (both incoming and outgoing).
+ *  - The paths representing incoming foreign key constraints are highlighted in a different color than outgoing constraints.
+ *  - Multiple constraints between the same two tables are prevented from overlapping by giving a unique curve to each of the lines.
+ *  - Hovering over a constraint produces a tooltip which shows the names of the fields that are linked by the constraint.
  *
- * Features:
- *  - Outputs SVG with inline CSS and JavaScript that may be customzed as needed to get the desired style or behavior
- *  - Tables in the schema are placed equidistantly around a circle
- *  - Clicking on the image causes the graph to rotate
- *  - Foreign key constraints represented by bézier curves connecting tables
- *  - Hovering over a table or a constraint causes the table to highlight along with all of its constraints
- *  - Incoming foreign key constraints are highlighted in a different color than outgoing constraints
- *  - Multiple constraints between connecting the same two tables are prevented from overlapping by giving a unique curve to each of the lines
- *  - Hovering over a constraint produces a tooltip which shows the names of the fields that are linked by the constraint
+ * To use this tool, simply place schemagraph.php on a web server and provide values
+ * for the constants needed to establish the database connection. You may also modify the constants
+ * for the circle radius, font size, and image dimensions. Since the script outputs plain SVG with inline
+ * CSS and JavaScript, you may further customize it as needed to get the desired style or behavior.
  * 
  * @todo We shoud be able to lay the @title contents also on each of the paths
  * @todo For self-referential foreign keys, we should make them circle back instead of just be a line
