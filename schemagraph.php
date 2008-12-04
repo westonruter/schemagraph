@@ -3,7 +3,7 @@
  * SchemaGraph: Visualizing MySQL Databases in SVG (version 1.0)
  *   by Weston Ruter <http://weston.ruter.net/>
  *      Shepherd Interactive <http://www.shepherd-interactive.com/>
- * License: GNU GPL 2.0 <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>
+ * License: GNU GPL 2.0 <http://creativecommons.org/licenses/GPL/2.0/>
  * Inspiried by Schemaball by Martin Krzywinski <http://mkweb.bcgsc.ca/schemaball/>
  *  
  * Home page: http://weston.ruter.net/projects/schemagraph/
@@ -128,7 +128,7 @@ echo '<?'.'xml version="1.0"'."?>\n";
 SchemaGraph: Visualizing MySQL Databases in SVG
 by Weston Ruter <http://weston.ruter.net/>
    Shepherd Interactive <http://www.shepherd-interactive.com/>
-License: GNU GPL 2.0 <http://www.gnu.org/licenses/old-licenses/gpl-2.0.html>
+License: GNU GPL 2.0 <http://creativecommons.org/licenses/GPL/2.0/>
 Inspiried by Schemaball by Martin Krzywinski <http://mkweb.bcgsc.ca/schemaball/>
  
 Home page: http://weston.ruter.net/projects/schemagraph/

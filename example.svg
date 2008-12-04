@@ -1,0 +1,193 @@
+<?xml version="1.0"?>
+<!--
+SchemaGraph: Visualizing MySQL Databases in SVG
+by Weston Ruter <http://weston.ruter.net/>
+   Shepherd Interactive <http://www.shepherd-interactive.com/>
+License: GNU GPL 2.0 <http://creativecommons.org/licenses/GPL/2.0/>
+Inspiried by Schemaball by Martin Krzywinski <http://mkweb.bcgsc.ca/schemaball/>
+ 
+Home page: http://weston.ruter.net/projects/schemagraph/
+Source: http://shepherd-interactive.googlecode.com/svn/trunk/schemagraph/
+-->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="-500 -500 1000 1000">
+<!--
+There are 16 tables, with 40 foreign keys.
+	
+Tables:
+ - language
+ - lemma
+ - lemma_definition
+ - license
+ - ref
+ - text
+ - text_revision
+ - token
+ - token_group
+ - token_group_component
+ - token_group_component_item
+ - token_parsing
+ - user
+ - user_language
+ - work
+ - work_license
+-->
+	<title>SchemaGraph of open-scriptures</title>
+	<style type="text/css">
+		text {
+			font-family:Arial,Helvetica,sans-serif;
+			font-size:25px;
+		}
+		#tables circle {
+			fill:red;
+		}
+		#tables path {
+			stroke:#bbb;
+			opacity:0.3;
+			stroke-width:2px;
+			fill:none;
+		}
+		#tables g:hover path,
+		#tables g.hover path {
+			stroke:blue;
+			stroke-width:4px;
+			opacity:0.6;
+		}
+		#tables path.incoming {
+			stroke:lime;
+			stroke-width:3px;
+			opacity:0.6;
+		}
+		g#tables g:hover text,
+		g#tables g.hover text {
+			font-weight:bold;
+		}
+		g#tables g:hover circle,
+		g#tables g.hover circle {
+			fill:purple;
+			opacity:1.0;
+		}
+	</style>
+	<circle r="250" fill="none" stroke="black" stroke-width="2px" />
+
+	<g id="tables" transform="rotate(90)">
+
+								<g id="language" class="fk_lemma_definition_language_code fk_text_language_code fk_token_parsing_language_code fk_user_preferred_language_code fk_user_language_language_code ">
+								<circle id="c_language" cx="250" cy="0" r="6" />
+				<text x="265" dy="6.25" transform="rotate(0)">language</text>
+				<path id='fk_text_name_text_id' d='M 250 0 Q 0 0 -95.6708580913 230.969883128' title='language.name ➡ text.id' />			</g>
+											<g id="lemma" class="fk_lemma_definition_lemma_id fk_token_parsing_lemma_id ">
+								<circle id="c_lemma" cx="230.969883128" cy="95.6708580913" r="6" />
+				<text x="265" dy="6.25" transform="rotate(22.5)">lemma</text>
+
+							</g>
+											<g id="lemma_definition" class="">
+								<circle id="c_lemma_definition" cx="176.776695297" cy="176.776695297" r="6" />
+				<text x="265" dy="6.25" transform="rotate(45)">lemma_definition</text>
+				<path id='fk_lemma_definition_lemma_id' d='M 176.776695297 176.776695297 Q 0 0 230.969883128 95.6708580913' title='lemma_definition.lemma ➡ lemma.id' /><path id='fk_lemma_definition_language_code' d='M 176.776695297 176.776695297 Q 0 0 250 0' title='lemma_definition.language ➡ language.code' /><path id='fk_lemma_definition_definition_text_id' d='M 176.776695297 176.776695297 Q 0 0 -95.6708580913 230.969883128' title='lemma_definition.definition ➡ text.id' /><path id='fk_lemma_definition_work_id' d='M 176.776695297 176.776695297 Q 0 -0 176.776695297 -176.776695297' title='lemma_definition.work ➡ work.id' />			</g>
+											<g id="license" class="fk_work_license_license_id ">
+								<circle id="c_license" cx="95.6708580913" cy="230.969883128" r="6" />
+				<text x="265" dy="6.25" transform="rotate(67.5)">license</text>
+
+				<path id='fk_license_name_text_id' d='M 95.6708580913 230.969883128 Q 0 0 -95.6708580913 230.969883128' title='license.name ➡ text.id' /><path id='fk_license_abbreviation_text_id' d='M 95.6708580913 230.969883128 Q 1.0934346421E-15 17.8571428571 -95.6708580913 230.969883128' title='license.abbreviation ➡ text.id' /><path id='fk_license_description_text_id' d='M 95.6708580913 230.969883128 Q 2.18686928419E-15 35.7142857143 -95.6708580913 230.969883128' title='license.description ➡ text.id' />			</g>
+											<g id="ref" class="fk_ref_parent_ref_id ">
+								<circle id="c_ref" cx="1.53080849893E-14" cy="250" r="6" />
+				<text x="265" dy="6.25" transform="rotate(90)">ref</text>
+				<path id='fk_ref_title_text_id' d='M 1.53080849893E-14 250 Q -0 0 -95.6708580913 230.969883128' title='ref.title ➡ text.id' /><path id='fk_ref_parent_ref_id' d='M 1.53080849893E-14 250 S 0 0 1.53080849893E-14 250' title='ref.parent ➡ ref.id' /><path id='fk_ref_start_token_token_id' d='M 1.53080849893E-14 250 Q -0 0 -230.969883128 95.6708580913' title='ref.start_token ➡ token.id' /><path id='fk_ref_end_token_token_id' d='M 1.53080849893E-14 250 Q -9.92089701821 14.8476716483 -230.969883128 95.6708580913' title='ref.end_token ➡ token.id' />			</g>
+											<g id="text" class="fk_text_name_text_id fk_lemma_definition_definition_text_id fk_license_name_text_id fk_license_abbreviation_text_id fk_license_description_text_id fk_ref_title_text_id fk_text_revision_text_id fk_token_group_component_item_comment_text_id fk_user_name_text_id fk_work_name_text_id fk_work_abbreviation_text_id fk_work_copyright_text_id ">
+								<circle id="c_text" cx="-95.6708580913" cy="230.969883128" r="6" />
+
+				<text x="265" dy="6.25" transform="rotate(112.5)">text</text>
+				<path id='fk_text_language_code' d='M -95.6708580913 230.969883128 Q 9.92089701821 14.8476716483 250 0' title='text.language ➡ language.code' /><path id='fk_text_source_text_revision_id' d='M -95.6708580913 230.969883128 Q -0 0 -176.776695297 176.776695297' title='text.source ➡ text_revision.id' /><path id='fk_text_last_revision_text_revision_id' d='M -95.6708580913 230.969883128 Q -9.92089701821 14.8476716483 -176.776695297 176.776695297' title='text.last_revision ➡ text_revision.id' /><path id='fk_text_creator_user_id' d='M -95.6708580913 230.969883128 Q -0 -0 -4.5924254968E-14 -250' title='text.creator ➡ user.id' />			</g>
+											<g id="text_revision" class="fk_text_source_text_revision_id fk_text_last_revision_text_revision_id fk_text_revision_previous_revision_text_revision_id ">
+								<circle id="c_text_revision" cx="-176.776695297" cy="176.776695297" r="6" />
+				<text x="265" dy="6.25" transform="rotate(135)">text_revision</text>
+				<path id='fk_text_revision_text_id' d='M -176.776695297 176.776695297 Q -19.8417940364 29.6953432965 -95.6708580913 230.969883128' title='text_revision.text ➡ text.id' /><path id='fk_text_revision_previous_revision_text_revision_id' d='M -176.776695297 176.776695297 S 0 0 -176.776695297 176.776695297' title='text_revision.previous_revision ➡ text_revision.id' /><path id='fk_text_revision_creator_user_id' d='M -176.776695297 176.776695297 Q -0 -0 -4.5924254968E-14 -250' title='text_revision.creator ➡ user.id' />			</g>
+											<g id="token" class="fk_ref_start_token_token_id fk_ref_end_token_token_id fk_token_group_component_item_token_id fk_token_parsing_token_id ">
+
+								<circle id="c_token" cx="-230.969883128" cy="95.6708580913" r="6" />
+				<text x="265" dy="6.25" transform="rotate(157.5)">token</text>
+				<path id='fk_token_work_id' d='M -230.969883128 95.6708580913 Q -0 -0 176.776695297 -176.776695297' title='token.work ➡ work.id' />			</g>
+											<g id="token_group" class="fk_token_group_component_item_group_id ">
+								<circle id="c_token_group" cx="-250" cy="3.06161699787E-14" r="6" />
+				<text x="265" dy="6.25" transform="rotate(180)">token_group</text>
+				<path id='fk_token_group_creator_user_id' d='M -250 3.06161699787E-14 Q -0 -0 -4.5924254968E-14 -250' title='token_group.creator ➡ user.id' />			</g>
+
+											<g id="token_group_component" class="fk_token_group_component_item_token_group_component_id ">
+								<circle id="c_token_group_component" cx="-230.969883128" cy="-95.6708580913" r="6" />
+				<text x="265" dy="6.25" transform="rotate(202.5)">token_group_component</text>
+				<path id='fk_token_group_component_item_group_id' d='M -230.969883128 -95.6708580913 Q -0 -0 -250 3.06161699787E-14' title='token_group_component.token_group ➡ token_group.id' />			</g>
+											<g id="token_group_component_item" class="">
+								<circle id="c_token_group_component_item" cx="-176.776695297" cy="-176.776695297" r="6" />
+				<text x="265" dy="6.25" transform="rotate(225)">token_group_component_item</text>
+
+				<path id='fk_token_group_component_item_token_group_component_id' d='M -176.776695297 -176.776695297 Q -0 -0 -230.969883128 -95.6708580913' title='token_group_component_item.token_group_component ➡ token_group_component.id' /><path id='fk_token_group_component_item_token_id' d='M -176.776695297 -176.776695297 Q -0 -0 -230.969883128 95.6708580913' title='token_group_component_item.token ➡ token.id' /><path id='fk_token_group_component_item_creator_user_id' d='M -176.776695297 -176.776695297 Q -0 -0 -4.5924254968E-14 -250' title='token_group_component_item.creator ➡ user.id' /><path id='fk_token_group_component_item_comment_text_id' d='M -176.776695297 -176.776695297 Q -0 0 -95.6708580913 230.969883128' title='token_group_component_item.comment ➡ text.id' />			</g>
+											<g id="token_parsing" class="">
+								<circle id="c_token_parsing" cx="-95.6708580913" cy="-230.969883128" r="6" />
+				<text x="265" dy="6.25" transform="rotate(247.5)">token_parsing</text>
+				<path id='fk_token_parsing_token_id' d='M -95.6708580913 -230.969883128 Q -0 -0 -230.969883128 95.6708580913' title='token_parsing.token ➡ token.id' /><path id='fk_token_parsing_lemma_id' d='M -95.6708580913 -230.969883128 Q 0 -0 230.969883128 95.6708580913' title='token_parsing.lemma ➡ lemma.id' /><path id='fk_token_parsing_language_code' d='M -95.6708580913 -230.969883128 Q 0 -0 250 0' title='token_parsing.language ➡ language.code' /><path id='fk_token_parsing_work_id' d='M -95.6708580913 -230.969883128 Q 0 -0 176.776695297 -176.776695297' title='token_parsing.work ➡ work.id' />			</g>
+											<g id="user" class="fk_text_creator_user_id fk_text_revision_creator_user_id fk_token_group_creator_user_id fk_token_group_component_item_creator_user_id fk_user_language_user_id ">
+								<circle id="c_user" cx="-4.5924254968E-14" cy="-250" r="6" />
+
+				<text x="265" dy="6.25" transform="rotate(270)">user</text>
+				<path id='fk_user_name_text_id' d='M -4.5924254968E-14 -250 Q -17.5140228643 -3.48375575029 -95.6708580913 230.969883128' title='user.name ➡ text.id' /><path id='fk_user_preferred_language_code' d='M -4.5924254968E-14 -250 Q 0 -0 250 0' title='user.preferred_language ➡ language.code' />			</g>
+											<g id="user_language" class="">
+								<circle id="c_user_language" cx="95.6708580913" cy="-230.969883128" r="6" />
+				<text x="265" dy="6.25" transform="rotate(292.5)">user_language</text>
+				<path id='fk_user_language_user_id' d='M 95.6708580913 -230.969883128 Q 0 -0 -4.5924254968E-14 -250' title='user_language.user ➡ user.id' /><path id='fk_user_language_language_code' d='M 95.6708580913 -230.969883128 Q 0 -0 250 0' title='user_language.language ➡ language.code' />			</g>
+											<g id="work" class="fk_lemma_definition_work_id fk_token_work_id fk_token_parsing_work_id fk_work_parent_work_id fk_work_license_work_id ">
+
+								<circle id="c_work" cx="176.776695297" cy="-176.776695297" r="6" />
+				<text x="265" dy="6.25" transform="rotate(315)">work</text>
+				<path id='fk_work_name_text_id' d='M 176.776695297 -176.776695297 Q 0 0 -95.6708580913 230.969883128' title='work.name ➡ text.id' /><path id='fk_work_abbreviation_text_id' d='M 176.776695297 -176.776695297 Q 14.8476716483 9.92089701821 -95.6708580913 230.969883128' title='work.abbreviation ➡ text.id' /><path id='fk_work_parent_work_id' d='M 176.776695297 -176.776695297 S 0 0 176.776695297 -176.776695297' title='work.parent ➡ work.id' /><path id='fk_work_copyright_text_id' d='M 176.776695297 -176.776695297 Q 29.6953432965 19.8417940364 -95.6708580913 230.969883128' title='work.copyright ➡ text.id' />			</g>
+											<g id="work_license" class="">
+								<circle id="c_work_license" cx="230.969883128" cy="-95.6708580913" r="6" />
+				<text x="265" dy="6.25" transform="rotate(337.5)">work_license</text>
+				<path id='fk_work_license_work_id' d='M 230.969883128 -95.6708580913 Q 0 -0 176.776695297 -176.776695297' title='work_license.work ➡ work.id' /><path id='fk_work_license_license_id' d='M 230.969883128 -95.6708580913 Q 0 0 95.6708580913 230.969883128' title='work_license.license ➡ license.id' />			</g>
+
+						</g>
+
+	<script type="text/ecmascript" xlink:href="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js" />
+	<script type="text/ecmascript">
+	<![CDATA[
+	
+	//Highlight incoming foreign key dependencies when hovering over a table
+	var constraints;
+	var selectedTable;
+	$('#tables g').mouseover(function(e){
+		var tokenlist = this.getAttribute('class').replace(/^\s*|\s*$/g, '');
+		if(!tokenlist){
+			constraints = [];
+			return;
+		}
+		
+		constraints = tokenlist.split(/\s+/);
+		$(constraints).each(function(){
+			var path = document.getElementById(this);
+			if(path)
+				path.setAttribute('class', 'incoming');
+		});
+		selectedTable = this;
+		
+	}).mouseout(function(e){
+		selectedTable = null;
+		
+		$(constraints).each(function(){
+			var el = document.getElementById(this);
+			if(el)
+				el.setAttribute('class', '');
+		});
+	});
+	
+	var tables = document.getElementById('tables');
+	var rotate = parseInt(tables.getAttribute('transform').match(/rotate\((-?\d+(?:.\d+)?)\)/)[1], 10);
+	
+	//Rotate the graph when it is clicked
+	$(document.documentElement).click(function(){
+		rotate += 10;
+		tables.transform.baseVal.getItem(0).setRotate(rotate, 0, 0);
+	});
+	
+	]]>
+	</script>
+</svg>
