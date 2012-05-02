@@ -19,3 +19,5 @@
 <p>To use this tool, simply place <a href="http://github.com/westonruter/schemagraph/blob/master/schemagraph.php">schemagraph.php</a> on a web server and provide values for the constants needed to establish the database connection. You may also modify the constants for the circle radius, font size, and image dimensions. Since the script outputs plain SVG with inline CSS and JavaScript, you may further customize it as needed to get the desired style or behavior.</p>
 
 <p>The code is released under the <a href="http://creativecommons.org/licenses/GPL/2.0/">GNU General Public License 2.0</a>.</p>
+
+<p>(I have put redirects from my blog to GitHub, so the comments on my blog are no longer accessible there. For archive purposes, I've posted the <a href="http://westonruter.github.com/schemagraph/wordpress-comment-archive.html">raw comments</a> to gh-pages.)</p>
