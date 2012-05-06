@@ -23,4 +23,4 @@
 <p>(I have put redirects from my blog to GitHub, so the comments on my blog are no longer accessible there. For archive purposes, I've posted the <a href="http://westonruter.github.com/schemagraph/wordpress-comment-archive.html">raw comments</a> to gh-pages.)</p>
 
 <hr>
-<p>Developed by <a href="http://westonruter.github.com/" rel="author">Weston Ruter</a> (<a href="https://twitter.com/westonruter">@westonruter</a>).</p>
+<p>Developed by <a href="https://plus.google.com/113853198722136596993" rel="author">Weston Ruter</a> (<a href="https://twitter.com/westonruter">@westonruter</a>).</p>
