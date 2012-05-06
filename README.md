@@ -21,3 +21,6 @@
 <p>The code is released under the <a href="http://creativecommons.org/licenses/GPL/2.0/">GNU General Public License 2.0</a>.</p>
 
 <p>(I have put redirects from my blog to GitHub, so the comments on my blog are no longer accessible there. For archive purposes, I've posted the <a href="http://westonruter.github.com/schemagraph/wordpress-comment-archive.html">raw comments</a> to gh-pages.)</p>
+
+<hr>
+<p>Developed by <a href="http://westonruter.github.com/" rel="author">Weston Ruter</a> (<a href="https://twitter.com/westonruter">@westonruter</a>).</p>
